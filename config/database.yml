@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: app_production
-  username: app
+  database: linkoad
+  username:
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
