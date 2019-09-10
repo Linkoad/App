@@ -16,16 +16,16 @@ module Api
 				if post.save
 					render json: {status: 'SUCCESS', message:'Saved post', data:post},status: :ok
 				else
-					render json: {status: 'ERROR', message:'Post not saved', data:post.erros},status: :unprocessable_entity
+					render json: {status: 'ERROR', message:'Post not saved', data:post.errors},status: :unprocessable_entity
 				end
             end
 
 			def update
 				post = Post.find(params[:id])
-				if post.update_attributes(post_params)
+				if post.update(post_params)
 					render json: {status: 'SUCCESS', message:'Updated post', data:post},status: :ok
 				else
-					render json: {status: 'ERROR', message:'Post not update', data:post.erros},status: :unprocessable_entity
+					render json: {status: 'ERROR', message:'Post not update', data:post.errors},status: :unprocessable_entity
                 end
             end
 

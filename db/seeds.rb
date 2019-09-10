@@ -11,3 +11,20 @@
 		body: Faker::Lorem.sentence
 	})
 end
+
+10.times  do
+	User.create({
+		name: Faker::Name.unique.name,
+        surname: Faker::Name.name,
+        email: Faker::Internet.email,
+        password: Faker::Internet.password
+	})
+end
+
+50.times do 
+	Comment.create({
+		user_name: Faker::Name.name,
+		title: Faker::Book.title,
+		body: Faker::Lorem.sentence
+	})
+end
