@@ -1,5 +1,7 @@
-class Post < ApplicationRecord
-	has_many :comments
+# frozen_string_literal: true
 
-	validates :title, :body, presence: true
+class Post < ApplicationRecord
+  has_many :comments
+
+  validates :title, :body, presence: true
 end
